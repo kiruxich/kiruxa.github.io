@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="icon" href="../../images/Логотип.png" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <div class="naming">
+          <img src="../../images/Логотип.png" />
+          <p>лаборатория искуственного интелекта</p>
+        </div>
+        <div class="links">
+          <a href="../../pages/main/index.html">Главная</a>
+          <a href="../../pages/about/index.html">О нас</a>
+          <a href="../../pages/contacts/index.html">Контакты</a>
+        </div>
+        <div class="signin">
+          <a href="https://docs.google.com/spreadsheets/u/0/">
+            <p>Войти</p>
+          </a>
+        </div>
+        <div class="geo">
+          <img src="../../images/геоточка.png" />
+        </div>
+      </div>
+      <div class="main-img">
+        <img src="../../images/main.png" />
+      </div>
+      <div class="arrow" onclick="goRazd()">
+        <img src="../../images/Стрелка.png" />
+      </div>
+      <div class="blocks" id="mySection">
+        <div class="block" id="block1" style="margin-right: 257px">
+          <p class="title">Кто мы?</p>
+          <p class="text">
+            Команда лаборатории искусственного интеллекта “KIRI” занимается
+            разработкой алгоритмов для нейросети, благодаря которым, станет
+            возможным мгновенный перевод аудио или видео с любого языка мира на
+            язык пользователя в режиме реального времени.
+          </p>
+        </div>
+        <div class="block" id="block2" style="margin-left: 410px">
+          <p class="title">История Компании</p>
+          <p class="text">
+            Свое начало наша компания берет в далеком 2013 году, тогда у нас
+            появилась идея, но технологии тех лет не позволяли вооплотить ее в
+            жизнь. Сейчас это стало возможным!
+          </p>
+        </div>
+        <div class="block" id="block3">
+          <p class="title">Цель</p>
+          <p class="text">
+            За последние пару лет мы добились больших успехов и планируем
+            испытать первый прототип специализированного ИИ уже в 2025 году!
+          </p>
+        </div>
+      </div>
+      <div class="machine">
+        <p class="title">Наше оборудование</p>
+        <p class="text">
+          В нашем распоряжении имеются 3 обычных ПК и 1 квантовый.
+        </p>
+        <div class="swiper">
+          <div class="left">
+            <img src="../../images/arrow_right.png" />
+          </div>
+          <div class="content">
+            <img src="../../images/swiper/квант.png" />
+          </div>
+          <div class="right">
+            <img src="../../images/arrow_left.png" />
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="logo">
+          <p>KIRI</p>
+          <a href="../../pages/main/index.html">Главная</a>
+          <a href="../../pages/about/index.html">О нас</a>
+          <a href="../../pages/contacts/index.html">Контакты</a>
+        </div>
+        <div class="rules">
+          <p>© Все права защищены</p>
+          <p>ООО “KIRI”</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function goRazd() {
+        // Используем метод scrollIntoView для перемещения к элементу с указанным id
+        document
+          .getElementById("mySection")
+          .scrollIntoView({ behavior: "smooth" });
+      }
+    </script>
+
+    <script>
+      const blocks = document.querySelectorAll(".block");
+
+      blocks.forEach((block) => {
+        block.addEventListener("mouseover", () => {
+          block.querySelector(".text").style.fontSize = "24px";
+        });
+
+        block.addEventListener("mouseout", () => {
+          block.querySelector(".text").style.fontSize = "20px";
+        });
+      });
+    </script>
+
+    <script>
+      // Массив изображений
+      let arr = [
+        "../../images/swiper/квант.png",
+        "../../images/swiper/2.jpg",
+        "../../images/swiper/3.jpg",
+        "../../images/swiper/4.jpg",
+      ];
+
+      // Переменная для хранения индекса текущего изображения
+      let currentIndex = 0;
+
+      // Функция для изменения контента
+      function changeContent() {
+        // Получаем элементы слайдера
+        let leftButton = document.querySelector(".left");
+        let rightButton = document.querySelector(".right");
+        let content = document.querySelector(".content");
+
+        // Устанавливаем атрибут src для img внутри content
+        content.querySelector("img").src = arr[currentIndex];
+
+        // Проверяем индекс текущего изображения и включаем/выключаем кнопки
+        if (currentIndex === 0) {
+          leftButton.disabled = true;
+        } else {
+          leftButton.disabled = false;
+        }
+
+        if (currentIndex === arr.length - 1) {
+          rightButton.disabled = true;
+        } else {
+          rightButton.disabled = false;
+        }
+      }
+
+      // Обработчик нажатия на кнопку "Вперед"
+      function nextImage() {
+        currentIndex++;
+
+        // Если индекс выходит за пределы массива, то начинаем сначала
+        if (currentIndex >= arr.length) {
+          currentIndex = 0;
+        }
+
+        changeContent();
+      }
+
+      // Обработчик нажатия на кнопку "Назад"
+      function prevImage() {
+        currentIndex--;
+
+        // Если индекс становится отрицательным, то переходим к последнему элементу массива
+        if (currentIndex < 0) {
+          currentIndex = arr.length - 1;
+        }
+
+        changeContent();
+      }
+
+      // Подписываемся на события нажатия кнопок
+      document.querySelector(".left").addEventListener("click", prevImage);
+      document.querySelector(".right").addEventListener("click", nextImage);
+
+      // Инициализируем свайпер
+      changeContent();
+    </script>
+  </body>
+</html>

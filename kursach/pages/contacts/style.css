@@ -1,0 +1,197 @@
+.wrapper {
+    max-width: 1920px;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.header {
+    margin-top: 100px;
+    display: flex;
+    gap: 240px;
+    align-items: center;
+}
+
+.header p {
+    color: #0300A8;
+    text-align: center;
+    font-family: Arial;
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+.iamkrasava {
+    margin-top: 100px;
+    border-radius: 30px;
+}
+
+.say {
+    margin-top: 100px;
+    border-radius: 30px;
+    background: #E2D9F5;
+    padding: 16px;
+    width: 970px;
+    height: 190px;
+    flex-shrink: 0;
+}
+
+.say p:first-child {
+    color: #0300A8;
+    text-align: center;
+    font-family: Arial;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.say p:nth-child(2) {
+    margin-top: 16px;
+    color: #0300A8;
+    text-align: center;
+    font-family: Arial;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.say p:nth-child(3) {
+    margin-top: 16px;
+    color: #0300A8;
+    text-align: center;
+    font-family: Arial;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.written {
+    margin-top: 40px;
+    color: #0300A8;
+    text-align: center;
+    font-family: Arial;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.blocks {
+    margin-top: 60px;
+    display: flex;
+    gap: 50px;
+}
+
+.blocks .block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 219px;
+    height: 172px;
+    flex-shrink: 0;
+    border-radius: 35px;
+    background: #E2D9F5;
+}
+
+
+.map {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.map p {
+    width: 520px;
+    color: #0300A8;
+    text-align: center;
+    font-family: Arial;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+
+
+.footer {
+    margin-top: 150px;
+    height: 373px;
+    background: #000;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer .logo {
+    display: flex;
+    gap: 180px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.footer .logo p {
+    color: #F8CECE;
+    text-align: center;
+    font-family: Arial;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.footer .logo a {
+    color: #F8CECE;
+    text-align: right;
+    font-family: Arial;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.footer .rules {
+    display: flex;
+    gap: 600px;
+    align-items: center;
+
+    margin-bottom: 60px;
+}
+
+.footer .rules p {
+    color: #F8CECE;
+    text-align: right;
+    font-family: Arial;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+}
+
+a {
+    color: green;
+    /* Цвет ссылок */
+    text-decoration: none;
+    /* Убираем подчёркивание */
+    border-bottom: 0 solid red;
+    /* Параметры линии снизу */
+    transition: 0.2s;
+    /* Время перехода */
+}
+
+a:hover {
+    color: brown;
+    /* Цвет ссылок при наведении */
+    border-bottom-width: 3px;
+    /* Толщина линии снизу */
+}
